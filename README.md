@@ -227,15 +227,26 @@ endmodule
 
 # OUTPUT WAVEFORM:
 
+ENCODER:
+
 <img width="838" alt="encoser8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/304cc633-f99b-4e88-8a8d-e77ef91b9af9">
 
+DECODER:
+
 <img width="690" alt="decoder8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/02c33818-f775-401b-9636-e726b05026c9">
+
+MULTIPLEXER:
 
 
 <img width="773" alt="mux8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/5d8655d7-1d55-431c-897c-cbe9763890c6">
 
+DEMULTIPLEXER:
+
 
 <img width="724" alt="demux8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/d97851fe-bc5b-4c44-9057-ebbb28f708c6">
+
+
+2 BIT MAGNITUDE COMPARATOR:
 
 
 <img width="786" alt="mag" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/62a21386-fbd6-43ba-b9bd-0ec03cadf3ea">
