@@ -1,5 +1,7 @@
 # SIMULATION AND IMPLEMENTATION OF  COMBINATIONAL LOGIC CIRCUITS
 
+DATE:
+
 # AIM: 
 
  To simulate and synthesis ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR using vivado.
@@ -25,83 +27,79 @@ STEP:6 Click the simulation to simulate the program and give the inputs and veri
 
 STEP:7 compare the output with truth table.
 
+# 8-3 ENCODER:
 
-**LOGIC DIAGRAM**
-
-# ENCODER
+LOGIC DIAGRAM:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/3cd1f95e-7531-4cad-9154-fdd397ac439e)
 
+VERILOG CODE:
 
-# DECODER
+ module encoder(d,a,b,c);
+ 
+ input [7:0]d; output a,b,c; 
+ 
+ or (a,d[4],d[5],d[6],d[7]);
+ 
+ or (b,d[2],d[3],d[6],d[7]); 
+ 
+ or (c,d[1],d[3],d[5],d[7]); 
+ 
+ endmodule
+
+# OUTPUT:
+
+![image](https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/71a234d9-e228-473f-89ea-ff19b6b3dfae)
+
+
+# 3-8 DECODER
+
+LOGIC DIAGRAM:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
 
+VERILOG CODE: 
 
-# MULTIPLEXER
+ module decoder(A,E,Y);
+ 
+ input [1:0]A;
+ 
+ input E;
+ 
+ output [3:0]Y;
+ 
+ assign Y[0]=~A[1]&~A[0]&E; 
+ 
+ assign Y[1]=~A[1]&A[0]&E; 
+ 
+ assign Y[2]=A[1]&~A[0]&E;
+ 
+ assign Y[3]=A[1]&A[0]&E;
+ 
+ endmodule 
+ 
+ module decoder(A,Y); 
+ 
+ input[2:0]A;
+ 
+ output[7:0]Y;
+ 
+ decoder_2_4 d1(A[1:0],~A[2],Y[3:0]);
+ 
+ decoder_2_4 d2(A[1:0],~A[2],Y[7:4]); 
+ 
+ endmodule
+
+# OUTPUT:
+
+![image](https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/4d644bb3-da3d-47cc-b2b1-fa89cdaf1d0f)
+
+
+# 8-1 MULTIPLEXER
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
 
-
-# DEMULTIPLEXER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
-
-
-# MAGNITUDE COMPARATOR
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
-
-
-# VERILOG CODE:
-
-**8-3 ENCODER:**
-
-module encoder(d,a,b,c);
-
-input [7:0]d; output a,b,c; 
-
-or (a,d[4],d[5],d[6],d[7]);
-
-or (b,d[2],d[3],d[6],d[7]); 
-
-or (c,d[1],d[3],d[5],d[7]); 
-
-endmodule
-
-# 3-8 DECODER:
-
-module decoder(A,E,Y);
-
-input [1:0]A;
-
-input E;
-
-output [3:0]Y;
-
-assign Y[0]=~A[1]&~A[0]&E; 
-
-assign Y[1]=~A[1]&A[0]&E; 
-
-assign Y[2]=A[1]&~A[0]&E;
-
-assign Y[3]=A[1]&A[0]&E;
-
-endmodule 
-
-module decoder(A,Y); 
-
-input[2:0]A;
-
-output[7:0]Y;
-
-decoder_2_4 d1(A[1:0],~A[2],Y[3:0]);
-
-decoder_2_4 d2(A[1:0],~A[2],Y[7:4]); 
-
-endmodule
-
-# 8-1 MULTIPLEXER:
+VERILOG CODE:
 
 module multi(i,s,y);
 
@@ -139,7 +137,18 @@ end
 
 endmodule
 
-# 1-8 DEMULTIPLEXER:
+OUTPUT:
+
+![image](https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/a9fc79f9-e614-4d21-a406-ad0a86d99672)
+
+
+# 8-1 DEMULTIPLEXER
+
+LOGIC DIAGRAM:
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
+
+VERILOG CODE:
 
 module demultiplexer(d1,d2,d3,d4,d5,d6,d7,d8,i,s0,s1,s2);
 
@@ -173,7 +182,18 @@ and g11(d8,s0,s1,s2,i);
 
 endmodule	
 
-# 2 BIT MAGNITUDE COMPARATOR  :
+OUTPUT:
+
+![image](https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/2265de1a-9fc1-4644-8cb4-eee76cbd349a)
+
+
+# MAGNITUDE COMPARATOR
+
+LOGIC DAIGRAM:
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
+
+VERILOG CODE:
 
 module mag_com(a,b,gt,it,eq);
 
@@ -204,7 +224,6 @@ begin
 gt = 1'b0;
 
 it = 1'b1;
-
 eq = 1'b0;
 
 end
@@ -225,34 +244,9 @@ end
 
 endmodule
 
+OUTPUT:
 
-
-# OUTPUT WAVEFORM:
-
-# ENCODER:
-
-<img width="838" alt="encoser8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/304cc633-f99b-4e88-8a8d-e77ef91b9af9">
-
-# DECODER:
-
-<img width="690" alt="decoder8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/02c33818-f775-401b-9636-e726b05026c9">
-
-# MULTIPLEXER:
-
-
-<img width="773" alt="mux8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/5d8655d7-1d55-431c-897c-cbe9763890c6">
-
-# DEMULTIPLEXER:
-
-
-<img width="724" alt="demux8" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/d97851fe-bc5b-4c44-9057-ebbb28f708c6">
-
-
-# 2 BIT MAGNITUDE COMPARATOR:
-
-
-<img width="786" alt="mag" src="https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/62a21386-fbd6-43ba-b9bd-0ec03cadf3ea">
-
+![image](https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/fb568be3-984a-42f8-8d39-a5c05ef7e36c)
 
 
 # RESULT:
