@@ -47,7 +47,7 @@ VERILOG CODE:
  
  endmodule
 
-# OUTPUT:
+OUTPUT:
 
 ![image](https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/71a234d9-e228-473f-89ea-ff19b6b3dfae)
 
@@ -90,7 +90,7 @@ VERILOG CODE:
  
  endmodule
 
-# OUTPUT:
+OUTPUT:
 
 ![image](https://github.com/teja2134/VLSI-LAB-EXP-2/assets/161149578/4d644bb3-da3d-47cc-b2b1-fa89cdaf1d0f)
 
